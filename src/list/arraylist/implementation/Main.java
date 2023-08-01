@@ -21,6 +21,8 @@ public class Main {
 
 
 
-        System.out.println(numbers.size());
+
+
+        System.out.println(numbers.indexOf(140));
     }
 }

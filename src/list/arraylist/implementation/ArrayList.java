@@ -77,4 +77,17 @@ public class ArrayList {
     public Object get(int index){
         return elementData[index];
     }
+
+    public int size() {
+        return size;
+    }
+
+    public int indexOf(Object o) {
+        for (int i = 0; i < size; i++){
+            if (o.equals(elementData[i])){
+                return i;
+            }
+        }
+        return -1;
+    }
 }
