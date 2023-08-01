@@ -35,4 +35,17 @@ public class ArrayList {
         size++; // ArrayList의 크기 증가
         return true;
     }
+
+    // 기본적으로 toString은 객체를 출력했을때 객체의 요소를 String으로 출력하는 역할
+    public String toString(){
+
+        String str = "[";
+        for (int i = 0; i < size; i++){
+            str += elementData[i];
+            if (i < size - 1) { // 마지막 인덱스 값은 , 를 붙히지 않는다.
+                str += ",";
+            }
+        }
+        return str + "]";
+    }
 }
