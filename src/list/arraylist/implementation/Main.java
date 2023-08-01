@@ -28,11 +28,13 @@ public class Main {
         ArrayList.ListIterator li = numbers.listIterator();
 
         while (li.hasNext()){
-            System.out.println(li.next());
+            int number = (int)li.next();
+            if (number == 30){
+                li.remove();
+            }
+
         }
-        while (li.hasPrevious()){
-            System.out.println(li.previous());
-        }
+        System.out.println(numbers);
 
 
     }

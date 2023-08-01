@@ -130,5 +130,16 @@ public class ArrayList {
 
             return nextIndex > 0;
         }
+
+        // 값 추가
+        public void add(Object element) {
+            ArrayList.this.add(nextIndex++, element);
+        }
+
+        //값 제거
+        public void remove() {
+            ArrayList.this.remove(nextIndex-1);
+            nextIndex--;
+        }
     }
 }
