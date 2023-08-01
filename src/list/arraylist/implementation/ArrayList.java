@@ -48,4 +48,18 @@ public class ArrayList {
         }
         return str + "]";
     }
+
+    public Object remove(int index) {
+
+        // 삭제한 값을 리턴시키기 위한 변수
+        Object removed = elementData[index];
+
+        for (int i = index+1; i <= size-1; i++){ // add함수와 반대로 조건을 부여
+            elementData[i-1] = elementData[i];
+        }
+        size--;
+        elementData[size] = null; // 마지막 인덱스에 null 삽입
+
+        return removed;
+    }
 }
