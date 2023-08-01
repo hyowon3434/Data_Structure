@@ -27,8 +27,13 @@ public class Main {
 
         ArrayList.ListIterator li = numbers.listIterator();
 
-        while(li.hasNext()){
+        while (li.hasNext()){
             System.out.println(li.next());
         }
+        while (li.hasPrevious()){
+            System.out.println(li.previous());
+        }
+
+
     }
 }

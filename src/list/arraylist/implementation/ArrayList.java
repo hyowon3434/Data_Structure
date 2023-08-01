@@ -110,7 +110,7 @@ public class ArrayList {
             return nextIndex < size();
         }
 
-        // ArrayList의 요소를 순차적으로 하나씩 리턴
+        // ArrayList의 현재 요소(nextIndex)를 메소드가 실행될 때마다 하나씩 리턴
         public Object next(){
 //            Object returnData =  elementData[nextIndex];
 //            nextIndex++;
@@ -120,5 +120,15 @@ public class ArrayList {
         }
 
 
+        // ArrayList의 현재 요소(nextIndex) 이전 요소를 리턴
+        public Object previous() {
+            return elementData[--nextIndex];
+        }
+
+        // 현재 인덱스가 첫번째 인덱스인지 여부를 리턴
+        public boolean hasPrevious() {
+
+            return nextIndex > 0;
+        }
     }
 }
