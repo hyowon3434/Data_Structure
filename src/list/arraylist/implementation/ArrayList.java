@@ -49,6 +49,7 @@ public class ArrayList {
         return str + "]";
     }
 
+    // 원하는 인덱스 값 삭제
     public Object remove(int index) {
 
         // 삭제한 값을 리턴시키기 위한 변수
@@ -61,5 +62,19 @@ public class ArrayList {
         elementData[size] = null; // 마지막 인덱스에 null 삽입
 
         return removed;
+    }
+
+    // 첫번째 인덱스 값 삭제
+    public Object removeFirst(){
+        return remove(0);
+    }
+
+    // 마지막 인덱스 값 삭제
+    public Object removeLast(){
+        return remove(size-1);
+    }
+
+    public Object get(int index){
+        return elementData[index];
     }
 }

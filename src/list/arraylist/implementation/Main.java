@@ -19,8 +19,8 @@ public class Main {
         // 첫번째 인덱스에 데이터 추가
         numbers.addFirst(5);
 
-        System.out.println(numbers);
-        System.out.println(numbers.remove(1));
-        System.out.println(numbers);
+
+
+        System.out.println(numbers.size());
     }
 }
