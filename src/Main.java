@@ -53,5 +53,7 @@ public class Main {
         for (int i = 0; i < numbers.size(); i++){
             System.out.println(numbers.get(i));
         }
+
+        // second commit 완료!!
     }
 }
