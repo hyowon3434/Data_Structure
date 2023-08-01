@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Main {
+public class Practice {
     public static void main(String[] args) {
 
         // ArrayList 선언
