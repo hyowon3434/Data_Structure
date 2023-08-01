@@ -74,14 +74,18 @@ public class ArrayList {
         return remove(size-1);
     }
 
+    // 인덱스에 해당하는 값을 리턴
     public Object get(int index){
         return elementData[index];
     }
 
+    // ArrayList의 크기를 리턴
     public int size() {
         return size;
     }
 
+    // 값을 매개변수로 받아 ArrayList에서 매개변수와 요소가 일치했을때 해당 인덱스를 리턴
+    // 아닐시 -1을 리턴하는 함수
     public int indexOf(Object o) {
         for (int i = 0; i < size; i++){
             if (o.equals(elementData[i])){
@@ -89,5 +93,32 @@ public class ArrayList {
             }
         }
         return -1;
+    }
+
+    public ListIterator listIterator(){
+
+        return new ListIterator();
+    }
+
+    // ListIterator class
+    class ListIterator{
+        private int nextIndex = 0;
+
+        // nextIndex가 존재하는지 여부를 리턴
+        public boolean hasNext(){
+
+            return nextIndex < size();
+        }
+
+        // ArrayList의 요소를 순차적으로 하나씩 리턴
+        public Object next(){
+//            Object returnData =  elementData[nextIndex];
+//            nextIndex++;
+//            return returnData;
+
+            return elementData[nextIndex++];
+        }
+
+
     }
 }

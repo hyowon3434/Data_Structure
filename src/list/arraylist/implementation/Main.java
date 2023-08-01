@@ -19,10 +19,16 @@ public class Main {
         // 첫번째 인덱스에 데이터 추가
         numbers.addFirst(5);
 
+        System.out.println(numbers);
 
+//        for (int i = 0; i < numbers.size(); i++){
+//            System.out.println(numbers.get(i));
+//        }
 
+        ArrayList.ListIterator li = numbers.listIterator();
 
-
-        System.out.println(numbers.indexOf(140));
+        while(li.hasNext()){
+            System.out.println(li.next());
+        }
     }
 }
