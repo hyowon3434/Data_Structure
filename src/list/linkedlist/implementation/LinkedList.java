@@ -107,4 +107,32 @@ public class LinkedList {
          size--;
          return returnData;
     }
+
+    // 원하는 인덱스의 노드 값 삭제
+    public Object remove(int k){
+         if (k == 0){
+             return removeFirst();
+         }
+
+         Node temp = node(k-1); // 이전 노드값 temp에 저장
+         Node todoDeleted = temp.next;
+         temp.next = temp.next.next;
+         Object returnData = todoDeleted.data;
+
+         if (todoDeleted == tail){
+             tail = temp;
+         }
+         todoDeleted = null;
+         size--;
+
+         return returnData;
+    }
+
+    // 마지막 인덱스의 노드 값 삭제
+    // remove함수에서 node함수를 호출하기 때문에
+    // 마지막 인덱스의 노드 이전 값을 찾는 과정을 거쳐서
+    // 속도가 느림.
+    public Object removeLast(){
+         return remove(size-1);
+    }
 }
