@@ -9,12 +9,8 @@ public class Main {
         numbers.addLast(20);
         numbers.addLast(30);
         DoublyLinkedList.ListIterator i = numbers.listIterator();
+        i.add(5);
 
-        while(i.hasNext()){
-            if ((int)i.next() == 20){
-                i.remove();
-            }
-        }
         System.out.println(numbers);
     }
 }

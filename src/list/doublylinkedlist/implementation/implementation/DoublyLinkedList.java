@@ -238,9 +238,14 @@ public class DoublyLinkedList {
                 newNode.next = next;
             }else{
                 lastReturned.next = newNode;
-                newNode.next = next;
+                newNode.prev = lastReturned;
+                if (next != null){
+                    newNode.next = next;
+                    next.prev = newNode;
+                }else {
+                    tail = newNode;
+                }
             }
-
 
             lastReturned = newNode;
             nextIndex++;
