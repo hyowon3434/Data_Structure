@@ -192,5 +192,34 @@ public class LinkedList {
         public boolean hasNext(){
             return nextIndex < size();
         }
+
+        // 값 추가
+        public void add(Object input){
+            Node newNode = new Node(input);
+
+            if (lastReturned == null){
+                head = newNode;
+                newNode.next = next;
+            }else{
+                lastReturned.next = newNode;
+                newNode.next = next;
+            }
+
+
+            lastReturned = newNode;
+            nextIndex++;
+            size++;
+        }
+
+        //현재 가리키고 있는 노드를 삭제
+        public void remove(){
+            if (nextIndex == 0){
+                throw new IllegalStateException();
+            }
+            LinkedList.this.remove(nextIndex-1);
+            nextIndex--;
+        }
     }
+
+
 }

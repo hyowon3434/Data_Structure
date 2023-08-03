@@ -11,10 +11,11 @@ public class Main {
         numbers.addLast(30);
         LinkedList.ListIterator i = numbers.listIterator();
 
-        while (i.hasNext()){
-            System.out.println(i.next());
+        while(i.hasNext()){
+            if ((int)i.next() == 20){
+                i.remove();
+            }
         }
-
         System.out.println(numbers);
 
     }
