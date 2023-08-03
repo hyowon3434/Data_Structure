@@ -208,6 +208,20 @@ public class DoublyLinkedList {
             return lastReturned.data;
         }
 
+        public boolean hasPrevious(){
+            return nextIndex > 0;
+        }
+        // 이전 노드를 리턴
+        public Object previous(){
+            if (next == null){
+                lastReturned = next = tail;
+            }else {
+                lastReturned = next = next.prev;
+            }
+            nextIndex--;
+            return lastReturned.data;
+        }
+
         // 다음 노드의 존재 여부를 리턴
         // linkedlist는 이전 노드의 정보를 알 수 없기 때문에
         // previous 함수를 만들 수 없다.
