@@ -1,8 +1,6 @@
-package list.linkedlist.implementation;
+package list.doublylinkedlist.implementation.implementation;
 
-import javax.jws.Oneway;
-
-public class LinkedList {
+public class DoublyLinkedList {
 
     private Node head;
     private Node tail;
@@ -13,12 +11,13 @@ public class LinkedList {
     private class Node{
 
         private Object data;
-
         private Node next;
+        private Node prev;
 
         public Node(Object input){
             this.data = input;
             this.next = null;
+            this.prev = null;
         }
         public String toString(){
             return String.valueOf(this.data);
@@ -29,6 +28,9 @@ public class LinkedList {
     public void addFirst(Object input) {
         Node newNode = new Node(input);
         newNode.next = head;
+        if (head != null){
+            head.prev = newNode;
+        }
         head = newNode;
         size++;
         if (head.next == null){
@@ -38,13 +40,13 @@ public class LinkedList {
 
     // tail에 값 추가
 
-
     public void addLast(Object input) {
         Node newNode = new Node(input);
         if (size == 0){
             addFirst(input); // LinkedList에 데이터가 없다면 addFirst 호출
         }else {
             tail.next = newNode;
+            newNode.prev = tail;
             tail = newNode;
             size++;
         }
@@ -216,7 +218,7 @@ public class LinkedList {
             if (nextIndex == 0){
                 throw new IllegalStateException();
             }
-            LinkedList.this.remove(nextIndex-1);
+            DoublyLinkedList.this.remove(nextIndex-1);
             nextIndex--;
         }
     }

@@ -1,7 +1,5 @@
 package list.linkedlist.implementation;
 
-import javax.jws.Oneway;
-
 public class LinkedList {
 
     private Node head;

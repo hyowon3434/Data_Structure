@@ -2,7 +2,6 @@ package compare;
 
 import list.arraylist.implementation.ArrayList;
 import list.linkedlist.implementation.LinkedList;
-import sun.awt.image.ImageWatched;
 
 public class Main {
     public static void main(String[] args) {
