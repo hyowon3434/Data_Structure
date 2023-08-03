@@ -119,6 +119,9 @@ public class DoublyLinkedList {
 
          Object returnData = temp.data;
          temp = null;
+         if (head != null){
+             head.prev = null;
+         }
          size--;
          return returnData;
     }
@@ -132,6 +135,10 @@ public class DoublyLinkedList {
          Node temp = node(k-1); // 이전 노드값 temp에 저장
          Node todoDeleted = temp.next;
          temp.next = temp.next.next;
+
+         if (temp.next != null){
+             temp.next.prev = temp;
+         }
          Object returnData = todoDeleted.data;
 
          if (todoDeleted == tail){
