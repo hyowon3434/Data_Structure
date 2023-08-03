@@ -146,4 +146,19 @@ public class LinkedList {
          Node temp = node(k);
          return temp.data;
     }
+
+    // 해당 값의 인덱스를 리턴
+    public int indexOf(Object data){
+        Node temp = head;
+        int index = 0;
+        while (temp.data != data){ // Node와 data가 같이 같을때 while문을 빠져나간다.
+            temp = temp.next;
+            index++;
+            if (temp == null){
+                return -1; // 해당 값이 없다면 -1을 리턴
+            }
+        }
+        return index;
+
+    }
 }
