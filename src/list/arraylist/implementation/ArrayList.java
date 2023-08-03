@@ -101,7 +101,7 @@ public class ArrayList {
     }
 
     // ListIterator class
-    class ListIterator{
+    public class ListIterator{
         private int nextIndex = 0;
 
         // nextIndex가 존재하는지 여부를 리턴
