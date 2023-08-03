@@ -56,11 +56,20 @@ public class DoublyLinkedList {
     // index에 해당하는 노드 값 조회
     // node 메소드는 외부에 노출되면 안됨.
     /*public */ Node node(int index){
-        Node x = head;
-        for (int i = 0; i < index; i++){
-            x = x.next;
+        if (index < size/2){
+            Node x = head;
+            for (int i = 0; i < index; i++){
+                x = x.next;
+            }
+            return x;
+        }else{
+            Node x = tail;
+            for (int i = size-1; i > index; i--){
+                x = x.prev;
+            }
+            return x;
         }
-        return x;
+
     }
 
     // 원하는 인덱스에 값 추가
@@ -74,6 +83,10 @@ public class DoublyLinkedList {
 
             temp1.next = newNode;
             newNode.next = temp2;
+            if (temp2 != null){
+                temp2.prev = newNode;
+            }
+            newNode.prev = temp1;
             size++;
 
             if (newNode.next == null){
