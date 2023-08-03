@@ -53,7 +53,7 @@ public class LinkedList {
 
     // index에 해당하는 노드 값 조회
     // node 메소드는 외부에 노출되면 안됨.
-     /*public*/ Node node(int index){
+    /*public */ Node node(int index){
         Node x = head;
         for (int i = 0; i < index; i++){
             x = x.next;
@@ -134,5 +134,16 @@ public class LinkedList {
     // 속도가 느림.
     public Object removeLast(){
          return remove(size-1);
+    }
+
+    // LinkedList의 사이즈 리턴
+    public int size(){
+         return size;
+    }
+
+    // 특정한 인덱스의 노드 값 조회
+    public Object get(int k){
+         Node temp = node(k);
+         return temp.data;
     }
 }
