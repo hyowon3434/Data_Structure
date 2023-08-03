@@ -9,6 +9,7 @@ public class LinkedList {
     private class Node{
 
         private Object data;
+
         private Node next;
         public Node(Object input){
             this.data = input;
@@ -19,8 +20,8 @@ public class LinkedList {
         }
 
     }
+    // head에 값 추가
 
-    // 값 추가
     public void addFirst(Object input) {
         Node newNode = new Node(input);
         newNode.next = head;
@@ -29,5 +30,18 @@ public class LinkedList {
         if (head.next == null){
             tail = head;
         }
+    }
+
+    // tail에 값 추가
+    public void addLast(Object input) {
+        Node newNode = new Node(input);
+        if (size == 0){
+            addFirst(input);
+        }else {
+            tail.next = newNode;
+            tail = newNode;
+            size++;
+        }
+
     }
 }
