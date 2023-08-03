@@ -44,4 +44,14 @@ public class LinkedList {
         }
 
     }
+
+    // index에 해당하는 노드 값 조회
+    // node 메소드는 외부에 노출되면 안됨.
+     /*public*/ Node node(int index){
+        Node x = head;
+       for (int i = 0; i < index; i++){
+           x = x.next;
+       }
+        return x;
+    }
 }
