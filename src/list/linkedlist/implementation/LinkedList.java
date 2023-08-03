@@ -159,6 +159,29 @@ public class LinkedList {
             }
         }
         return index;
+    }
 
+    // Iterator
+    public ListIterator listIterator(){
+
+        return new ListIterator();
+    }
+
+    // ListIterator inner class
+    public class ListIterator{
+        private Node next;
+        private Node lastReturned;
+        private int nextIndex;
+
+
+        ListIterator(){
+            next = head;
+        }
+        public Object next(){
+            lastReturned = next;
+            next = next.next;
+            nextIndex++;
+            return lastReturned.data;
+        }
     }
 }

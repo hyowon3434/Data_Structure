@@ -9,8 +9,12 @@ public class Main {
         numbers.addLast(10);
         numbers.addLast(20);
         numbers.addLast(30);
+        LinkedList.ListIterator i = numbers.listIterator();
+        System.out.println(i.next());
+        System.out.println(i.next());
+        System.out.println(i.next());
 
-        System.out.println(numbers.indexOf(20));
+
         System.out.println(numbers);
 
     }
