@@ -8,6 +8,8 @@ public class LinkedList {
     private Node tail;
     private int size = 0;
 
+
+
     private class Node{
 
         private Object data;
@@ -35,6 +37,7 @@ public class LinkedList {
     }
 
     // tail에 값 추가
+
 
     public void addLast(Object input) {
         Node newNode = new Node(input);
@@ -94,4 +97,14 @@ public class LinkedList {
          return str+"]";
     }
 
+    // head에 해당하는 노드 값 삭제
+    public Object removeFirst(){
+         Node temp  = head;
+         head =  head.next;
+
+         Object returnData = temp.data;
+         temp = null;
+         size--;
+         return returnData;
+    }
 }
